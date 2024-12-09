@@ -1,20 +1,6 @@
 import Foundation
 import Shared
 
-func getGuardDirection(char: String) -> Direction? {
-    switch char {
-    case ">":
-        return .right;
-    case "<":
-        return .left;
-    case "v":
-        return .down;
-    case "^":
-        return .up;
-    default:
-        return nil;
-    }
-}
 let clock = ContinuousClock()
 var elapsed = clock.measure {
     var map: [[String]] = []
@@ -92,12 +78,4 @@ var elapsed = clock.measure {
     }
 }
 print(elapsed)
-public struct CoordinateAndDirection : Equatable, Hashable {
-    let coordinate: Coordinate
-    let direction: Direction
-    init(coordinate: Coordinate, direction: Direction) {
-        self.coordinate = coordinate;
-        self.direction = direction;
-    }
-}
 
